@@ -9,8 +9,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb_form")
-public class Form {
+@Table(name = "tb_parecer")
+public class Parecer {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,7 +24,7 @@ public class Form {
 	@JoinColumn(name = "id_tecnico")
 	private Tecnico tecnico;
 	
-	public Form() {
+	public Parecer() {
 		
 	}
 
