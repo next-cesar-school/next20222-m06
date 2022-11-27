@@ -1,4 +1,4 @@
-package Modelo;
+package br.org.cesar.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Entity
-public class cliente {
+public class Cliente {
 	
 	@Id
 	private int id;
@@ -16,13 +16,13 @@ public class cliente {
 	private LocalDate dataIsercao;
 	
 	@OneToMany(mappedBy = "idCliente")
-	private List<parecer> pareceres;
+	private List<Parecer> pareceres;
 	
-	public cliente() {
+	public Cliente() {
 		
 	}
 	
-	public cliente(int id, String nomeCliente) {
+	public Cliente(int id, String nomeCliente) {
 		this.id = id;
 		this.nomeCliente = nomeCliente;
 		this.dataIsercao = LocalDate.now();
@@ -44,5 +44,4 @@ public class cliente {
 		return dataIsercao;
 	}
 	
-	//PODE SER TALVEZ---->> Escreva algo aqui talvez
 }

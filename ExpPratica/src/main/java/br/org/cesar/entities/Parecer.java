@@ -1,11 +1,11 @@
-package Modelo;
+package br.org.cesar.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class parecer {
+public class Parecer {
 	
 	@Id
 	private int id;
@@ -20,13 +20,12 @@ public class parecer {
 	@ManyToOne
 	private int idCliente;
 	
-	// relaciona-se o cadastro do cliente com o parecer(chave estrangeira de cliente em parecer). @ManytoOne
 	
-	public parecer() {
+	public Parecer() {
 		
 	}
 
-	public parecer(int id, String parecer, int idDefeito, int idEquipamento, int idTecnico) {
+	public Parecer(int id, String parecer, int idDefeito, int idEquipamento, int idTecnico) {
 		this.id = id;
 		this.parecer = parecer;
 		this.idDefeito = idDefeito;

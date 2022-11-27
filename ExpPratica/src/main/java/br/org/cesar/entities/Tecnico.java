@@ -1,4 +1,4 @@
-package Modelo;
+package br.org.cesar.entities;
 
 import java.util.List;
 
@@ -7,20 +7,20 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class tecnico {
+public class Tecnico {
 
 	@Id
 	private int id;
 	private String nomeTecnico;
 	
 	@OneToMany(mappedBy = "idTecnico")
-	private List<parecer> pareceres;
+	private List<Parecer> pareceres;
 	
-	public tecnico(){
+	public Tecnico(){
 		
 	}
 
-	public tecnico(int id, String nomeTecnico) {
+	public Tecnico(int id, String nomeTecnico) {
 		this.id = id;
 		this.nomeTecnico = nomeTecnico;
 	}

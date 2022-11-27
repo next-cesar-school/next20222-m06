@@ -1,4 +1,4 @@
-package Modelo;
+package br.org.cesar.entities;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
-public class equipamento {
+public class Equipamento {
 
 	@Id
 	private int id;
@@ -15,13 +15,13 @@ public class equipamento {
 	private String aparelho;
 	
 	@OneToMany(mappedBy = "idEquipamento")
-	private List<parecer> pareceres;
+	private List<Parecer> pareceres;
 	
-	public equipamento() {
+	public Equipamento() {
 		
 	}
 
-	public equipamento(int id, String aparelho) {
+	public Equipamento(int id, String aparelho) {
 		this.id = id;
 		this.aparelho = aparelho;
 	}
