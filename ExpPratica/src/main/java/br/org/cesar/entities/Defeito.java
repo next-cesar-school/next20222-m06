@@ -13,7 +13,7 @@ public class Defeito {
 	private long id;
 	private String tipoDefeito;
 	
-	@OneToMany(mappedBy = "idDefeito")
+	@OneToMany(mappedBy = "defeito")
 	private List<Parecer> pareceres;
 	
 	public Defeito() {

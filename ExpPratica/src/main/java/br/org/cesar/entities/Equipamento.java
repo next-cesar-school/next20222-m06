@@ -14,7 +14,7 @@ public class Equipamento {
 	
 	private String aparelho;
 	
-	@OneToMany(mappedBy = "idEquipamento")
+	@OneToMany(mappedBy = "equipamento")
 	private List<Parecer> pareceres;
 	
 	public Equipamento() {

@@ -7,6 +7,7 @@ import javax.persistence.OneToMany;
 import java.time.LocalDate;
 import java.util.List;
 
+
 @Entity
 public class Cliente {
 	
@@ -15,8 +16,9 @@ public class Cliente {
 	private String nomeCliente;
 	private LocalDate dataIsercao;
 	
-	@OneToMany(mappedBy = "idCliente")
+	@OneToMany(mappedBy = "cliente")
 	private List<Parecer> pareceres;
+
 	
 	public Cliente() {
 		

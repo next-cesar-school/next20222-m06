@@ -2,6 +2,7 @@ package br.org.cesar.entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -12,25 +13,30 @@ public class Parecer {
 	private String parecer;
 	
 	@ManyToOne
-	private long idDefeito;
+	@JoinColumn(name = "id_defeito")
+	private Defeito defeito;
 	@ManyToOne
-	private long idEquipamento;
+	@JoinColumn(name = "id_equipamento")
+	private Equipamento equipamento;
 	@ManyToOne
-	private long idTecnico;
+	@JoinColumn(name = "id_tecnico")
+	private Tecnico tecnico;
 	@ManyToOne
-	private long idCliente;
+	@JoinColumn(name = "id_cliente")
+	private Cliente cliente;
 	
 	
 	public Parecer() {
 		
 	}
 
-	public Parecer(long id, String parecer, long idDefeito, long idEquipamento, long idTecnico) {
+	public Parecer(long id, String parecer, Defeito defeito, Equipamento equipamento, Tecnico tecnico, Cliente cliente) {
 		this.id = id;
 		this.parecer = parecer;
-		this.idDefeito = idDefeito;
-		this.idEquipamento = idEquipamento;
-		this.idTecnico = idTecnico;
+		this.defeito = defeito;
+		this.equipamento = equipamento;
+		this.tecnico = tecnico;
+		this.cliente = cliente;
 	}
 
 	public long getId() {
@@ -49,29 +55,35 @@ public class Parecer {
 		this.parecer = parecer;
 	}
 
-	public long getIdDefeito() {
-		return idDefeito;
+	public Defeito getDefeito() {
+		return defeito;
 	}
 
-	public void setIdDefeito(long idDefeito) {
-		this.idDefeito = idDefeito;
+	public void setDefeito(Defeito defeito) {
+		this.defeito = defeito;
 	}
 
-	public long getIdEquipamento() {
-		return idEquipamento;
+	public Equipamento getEquipamento() {
+		return equipamento;
 	}
 
-	public void setIdEquipamento(long idEquipamento) {
-		this.idEquipamento = idEquipamento;
+	public void setEquipamento(Equipamento equipamento) {
+		this.equipamento = equipamento;
 	}
 
-	public long getIdTecnico() {
-		return idTecnico;
+	public Tecnico getTecnico() {
+		return tecnico;
 	}
 
-	public void setIdTecnico(long idTecnico) {
-		this.idTecnico = idTecnico;
+	public void setTecnico(Tecnico tecnico) {
+		this.tecnico = tecnico;
 	}
 	
-	
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
 }

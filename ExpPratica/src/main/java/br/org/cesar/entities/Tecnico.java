@@ -13,7 +13,7 @@ public class Tecnico {
 	private long id;
 	private String nomeTecnico;
 	
-	@OneToMany(mappedBy = "idTecnico")
+	@OneToMany(mappedBy = "tecnico")
 	private List<Parecer> pareceres;
 	
 	public Tecnico(){
