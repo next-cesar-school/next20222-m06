@@ -11,7 +11,7 @@ import java.util.List;
 public class Cliente {
 	
 	@Id
-	private int id;
+	private long id;
 	private String nomeCliente;
 	private LocalDate dataIsercao;
 	
@@ -22,16 +22,16 @@ public class Cliente {
 		
 	}
 	
-	public Cliente(int id, String nomeCliente) {
+	public Cliente(long id, String nomeCliente) {
 		this.id = id;
 		this.nomeCliente = nomeCliente;
 		this.dataIsercao = LocalDate.now();
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	public String getNomeCliente() {

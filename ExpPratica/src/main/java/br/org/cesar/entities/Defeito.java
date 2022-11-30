@@ -10,7 +10,7 @@ import javax.persistence.OneToMany;
 public class Defeito {
 
 	@Id
-	private int id;
+	private long id;
 	private String tipoDefeito;
 	
 	@OneToMany(mappedBy = "idDefeito")
@@ -20,16 +20,16 @@ public class Defeito {
 		
 	}
 
-	public Defeito(int id, String tipoDefeito) {
+	public Defeito(long id, String tipoDefeito) {
 		this.id = id;
 		this.tipoDefeito = tipoDefeito;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

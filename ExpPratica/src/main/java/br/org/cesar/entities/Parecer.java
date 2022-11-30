@@ -8,24 +8,24 @@ import javax.persistence.ManyToOne;
 public class Parecer {
 	
 	@Id
-	private int id;
+	private long id;
 	private String parecer;
 	
 	@ManyToOne
-	private int idDefeito;
+	private long idDefeito;
 	@ManyToOne
-	private int idEquipamento;
+	private long idEquipamento;
 	@ManyToOne
-	private int idTecnico;
+	private long idTecnico;
 	@ManyToOne
-	private int idCliente;
+	private long idCliente;
 	
 	
 	public Parecer() {
 		
 	}
 
-	public Parecer(int id, String parecer, int idDefeito, int idEquipamento, int idTecnico) {
+	public Parecer(long id, String parecer, long idDefeito, long idEquipamento, long idTecnico) {
 		this.id = id;
 		this.parecer = parecer;
 		this.idDefeito = idDefeito;
@@ -33,11 +33,11 @@ public class Parecer {
 		this.idTecnico = idTecnico;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
@@ -49,27 +49,27 @@ public class Parecer {
 		this.parecer = parecer;
 	}
 
-	public int getIdDefeito() {
+	public long getIdDefeito() {
 		return idDefeito;
 	}
 
-	public void setIdDefeito(int idDefeito) {
+	public void setIdDefeito(long idDefeito) {
 		this.idDefeito = idDefeito;
 	}
 
-	public int getIdEquipamento() {
+	public long getIdEquipamento() {
 		return idEquipamento;
 	}
 
-	public void setIdEquipamento(int idEquipamento) {
+	public void setIdEquipamento(long idEquipamento) {
 		this.idEquipamento = idEquipamento;
 	}
 
-	public int getIdTecnico() {
+	public long getIdTecnico() {
 		return idTecnico;
 	}
 
-	public void setIdTecnico(int idTecnico) {
+	public void setIdTecnico(long idTecnico) {
 		this.idTecnico = idTecnico;
 	}
 	

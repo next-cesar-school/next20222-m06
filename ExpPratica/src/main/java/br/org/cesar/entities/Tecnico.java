@@ -10,7 +10,7 @@ import javax.persistence.OneToMany;
 public class Tecnico {
 
 	@Id
-	private int id;
+	private long id;
 	private String nomeTecnico;
 	
 	@OneToMany(mappedBy = "idTecnico")
@@ -20,16 +20,16 @@ public class Tecnico {
 		
 	}
 
-	public Tecnico(int id, String nomeTecnico) {
+	public Tecnico(long id, String nomeTecnico) {
 		this.id = id;
 		this.nomeTecnico = nomeTecnico;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

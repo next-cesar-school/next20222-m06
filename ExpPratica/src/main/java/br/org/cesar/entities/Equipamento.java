@@ -10,7 +10,7 @@ import javax.persistence.OneToMany;
 public class Equipamento {
 
 	@Id
-	private int id;
+	private long id;
 	
 	private String aparelho;
 	
@@ -21,16 +21,16 @@ public class Equipamento {
 		
 	}
 
-	public Equipamento(int id, String aparelho) {
+	public Equipamento(long id, String aparelho) {
 		this.id = id;
 		this.aparelho = aparelho;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
