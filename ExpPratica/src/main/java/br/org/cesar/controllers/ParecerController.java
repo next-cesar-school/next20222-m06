@@ -1,6 +1,9 @@
 package br.org.cesar.controllers;
 
+import java.io.IOException;
 import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -13,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.org.cesar.entities.Parecer;
 import br.org.cesar.repositories.ParecerRepository;
+import excel.ExportarExcel;
 
 @RestController
 @RequestMapping(value = "/Parecer")
@@ -43,5 +47,16 @@ public class ParecerController {
 	public void delete(@PathVariable Long id){
 		repository.deleteById(id);
 	}
-
+	
+	@GetMapping(??????)
+	private void ExportarParaExcel(HttpServletResponse retorno) throws IOException{
+		retorno.setContentType("application/octet-stream");
+		String headerKey = "Content-Disposition";
+		String headerValue = "attachment; filename=Parecer_info.xlsx";
+		
+		retorno.setHeader(headerKey, headerValue);
+		List<Parecer> listaPareceres = repository.findAll();
+		ExportarExcel e = new ExportarExcel(listaPareceres);
+		e.Exportar(retorno);
+	}
 }
